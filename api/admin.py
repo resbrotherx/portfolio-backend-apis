@@ -6,6 +6,7 @@ from .models import (
     Education,
     Feedback,
     ContactMessage,
+    PortfolioImage,
 )
 
 # -------------------- PORTFOLIO --------------------
@@ -29,6 +30,10 @@ class SkillAdmin(admin.ModelAdmin):
     list_display = ("id", "intro")
     ordering = ("id",)
 
+@admin.register(PortfolioImage)
+class PortfolioImageAdmin(admin.ModelAdmin):
+    list_display = ("id", "portfolio", "image")
+    ordering = ("-id",)
 
 # -------------------- EXPERIENCE --------------------
 @admin.register(Experience)
